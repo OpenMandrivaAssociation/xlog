@@ -39,12 +39,6 @@ desktop-file-install \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/xlog.desktop
 
-%post
-update-mime-database %{_datadir}/mime &> /dev/null || :
-
-%postun
-update-mime-database %{_datadir}/mime &> /dev/null || :
-
 %files -f %{name}.lang
 %doc AUTHORS data/doc/BUGS ChangeLog NEWS README data/doc/TODO data/doc/manual data/doc/manual.tex data/glabels/qsllabels.glabels
 %{_bindir}/%{name}
