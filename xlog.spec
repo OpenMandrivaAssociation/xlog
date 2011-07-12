@@ -14,7 +14,6 @@ BuildRequires:	shared-mime-info
 BuildRequires:	gettext-devel
 BuildRequires:	desktop-file-utils
 
-
 %description
 xlog is a logging program for amateur radio operators. The log is stored
 into a text file. QSO's are presented in a list. Items in the list can be
@@ -46,8 +45,6 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %postun
 update-mime-database %{_datadir}/mime &> /dev/null || :
 
-%clean
-
 %files -f %{name}.lang
 %doc AUTHORS data/doc/BUGS ChangeLog NEWS README data/doc/TODO data/doc/manual data/doc/manual.tex data/glabels/qsllabels.glabels
 %{_bindir}/%{name}
@@ -60,5 +57,3 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/applications/*.desktop
 %{_datadir}/mime/packages/*
 %{_mandir}/man?/*
-
-
