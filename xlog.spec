@@ -40,7 +40,9 @@ desktop-file-install \
         %{buildroot}%{_datadir}/applications/xlog.desktop
 
 %files -f %{name}.lang
-%doc AUTHORS data/doc/BUGS ChangeLog NEWS README data/doc/TODO data/doc/manual data/doc/manual.tex data/glabels/qsllabels.glabels
+%doc AUTHORS data/doc/BUGS ChangeLog NEWS README
+%doc data/doc/TODO data/doc/manual data/doc/manual.tex
+%doc data/glabels/qsllabels.glabels
 %{_bindir}/%{name}
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/dxcc
