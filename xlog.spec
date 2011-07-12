@@ -1,19 +1,18 @@
 Name:           xlog
 Version:        2.0.5
-Release:        %mkrel 1
+Release:        1
 Summary:        Logging program for Hamradio Operators
 Group:          Communications
 License:        GPLv3+
 URL:            http://www.nongnu.org/xlog/
 Source0:        http://download.savannah.gnu.org/releases/%{name}/%{name}-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: gtk2-devel
-BuildRequires: libgnomeprint2-2-devel
-BuildRequires: hamlib-devel
-BuildRequires: shared-mime-info
-BuildRequires: gettext-devel
-BuildRequires: desktop-file-utils
-Requires: hamlib
+Patch0:		xlog-2.0.5.patch
+BuildRequires:	gtk2-devel
+BuildRequires:	libgnomeprint2-2-devel
+BuildRequires:	hamlib-devel
+BuildRequires:	shared-mime-info
+BuildRequires:	gettext-devel
+BuildRequires:	desktop-file-utils
 
 
 %description
@@ -25,16 +24,12 @@ xlog supports trlog, adif, cabrillo, edit, twlog and editest files.
 
 %prep
 %setup -q
-#fix bogus .desktop file
-sed -i -e "s/Utility;Database;HamRadio;GTK/Network;HamRadio;GTK/g" data/desktop/xlog.desktop
-sed -i -e "s/.png//g" data/desktop/xlog.desktop
 
 %build
 %configure --enable-hamlib
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall
 rm -f %{buildroot}%{_datadir}/applications/mimeinfo.cache
 
@@ -51,10 +46,8 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 update-mime-database %{_datadir}/mime &> /dev/null || :
 
 %clean
-rm -rf %{buildroot}
 
 %files -f %{name}.lang
-%defattr(-,root,root,-)
 %doc AUTHORS data/doc/BUGS ChangeLog NEWS README data/doc/TODO data/doc/manual data/doc/manual.tex data/glabels/qsllabels.glabels
 %{_bindir}/%{name}
 %dir %{_datadir}/%{name}
