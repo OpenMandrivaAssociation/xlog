@@ -24,6 +24,7 @@ xlog supports trlog, adif, cabrillo, edit, twlog and editest files.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure --enable-hamlib
