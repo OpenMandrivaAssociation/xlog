@@ -1,0 +1,14 @@
+diff -rupN xlog-2.0.5/data/desktop/xlog.desktop xlog-2.0.5-new/data/desktop/xlog.desktop
+--- xlog-2.0.5-new/data/desktop/xlog.desktop	2009-02-21 16:34:28.000000000 +0100
++++ xlog-2.0.5/data/desktop/xlog.desktop	2011-07-12 18:32:20.000000000 +0200
+@@ -5,8 +5,8 @@ Comment[nl]=Log programma voor zendamate
+ Comment[pl]=Dziennik łączności dla radioamatorów
+ TryExec=xlog
+ Exec=xlog %F
+-Icon=xlog-icon.png
++Icon=xlog-icon
+ Terminal=false
+ Type=Application
+-Categories=Utility;Database;HamRadio;GTK
++Categories=Network;HamRadio;GTK
+ MimeType=text/x-xlog
