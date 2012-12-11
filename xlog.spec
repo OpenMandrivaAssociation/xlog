@@ -8,7 +8,6 @@ URL:            http://www.nongnu.org/xlog/
 Source0:        http://download.savannah.gnu.org/releases/%{name}/%{name}-%{version}.tar.gz
 Patch0:		xlog-2.0.5.patch
 BuildRequires:	gtk2-devel
-BuildRequires:	libgnomeprint2-2-devel
 BuildRequires:	hamlib-devel
 BuildRequires:	shared-mime-info
 BuildRequires:	gettext-devel
