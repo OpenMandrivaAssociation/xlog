@@ -4,7 +4,7 @@ Release:        2
 Summary:        Logging program for Hamradio Operators
 Group:          Communications
 License:        GPLv3+
-URL:            http://www.nongnu.org/xlog/
+URL:            https://www.nongnu.org/xlog/
 Source0:        http://download.savannah.gnu.org/releases/%{name}/%{name}-%{version}.tar.gz
 Patch0:		xlog-2.0.5.patch
 BuildRequires:	gtk2-devel
